@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab Test 01</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+
+		h1,
+		h2,
+		ol,
+		ul,
+		p {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 22px;
+		}
+
+		ul {
+			list-style-type: disc;
+			margin-left: 30px;
+		}
+
+		ol {
+			list-style-type: decimal;
+			margin-left: 30px;
+		}
+
+		li {
+			margin-bottom: 5px;
+		}
+
+		p {
+			font-size: 18px;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 600px;
+			margin: 20px auto;
+			font-family: Arial, sans-serif;
+			border: 1px solid #ddd;
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 8px;
+		}
+
+		th {
+			background-color: #ddd;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+			background-color: #ddd;
+		}
+
+		td:first-child,
+		th:first-child {
+			border-left: none;
+		}
+
+		td:last-child,
+		th:last-child {
+			border-right: none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>CSE 3110: Database Systems Laboratory - Lab Test 01</h1>
+	<div style="max-width: 800px; margin: 0 auto;">
+		<h2>Table Description</h2>
+		<table>
+			<tr>
+				<th>Table Name</th>
+				<th>Columns</th>
+			</tr>
+			<tr>
+				<td>Customer</td>
+				<td>ID<br>Name<br>Contact</td>
+			</tr>
+			<tr>
+				<td>Goods</td>
+				<td>Goods_ID<br>Goods_Name<br>Price</td>
+			</tr>
+			<tr>
+				<td>Order</td>
+				<td>Order_Date<br>Customer_ID<br>Goods_ID</td>
+			</tr>
+		</table>
+		<ul>
+			<li>Make ID and GOODS_ID as the primary key and don’t allow the columns to take NULL values.</li>
+			<li>Make CUSTOMER_ID and GOODS_ID the foreign key of Order table referencing ID of Customer and GOODS_ID of
+				Goods table respectively</li>
+			<li>Apply some domain integrity techniques so that you can’t put negative value in the PRICE column of Goods
+				table.</li>
+			<li>Apply some domain integrity techniques so that if you delete a record in the customer table, related
+				records in Order table will automatically deleted.</li>
+		</ul>
+
+		<h2>Queries</h2>
+		<ol>
+			<li>To retrieve the names of all goods that have the letter "i" in their name and the customer's name
+				contains the letter "j".</li>
+			<li>Find the total number of customers in the Customer table and the details of the customer with ID 102,
+				including their contact number.</li>
+			<li>Retrieve the name and contact information of all customers who have purchased the goods with the lowest
+				price in the Goods table.</li>
+			<li>Find the customers who have not placed any orders yet.</li>
+			<li>Find the name of the customer who placed the most expensive order.</li>
+			<li>List all customers who have made more than 2 orders.</li>
+			<li>Drop the three tables.</li>
+		</ol>
+	</div>
+</body>
+
+</html>

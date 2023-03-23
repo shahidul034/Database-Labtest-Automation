@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dept Input Form</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+			margin-top: 50px;
+		}
+
+		form {
+			width: 500px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.delete-form,
+		.update-form {
+			display: flex;
+			align-items: center;
+			margin-top: 20px;
+		}
+
+		.delete-form label,
+		.update-form label {
+			margin-bottom: 0;
+			margin-right: 10px;
+			display: inline-block;
+			width: 200px;
+		}
+
+		.delete-form input[type="text"],
+		.update-form input[type="text"],
+		.update-form input[type="number"] {
+			width: 300px;
+			margin-right: 10px;
+			display: inline-block;
+		}
+
+		.delete-form input[type="submit"] {
+			background-color: #FF0000;
+		}
+
+		.delete-form input[type="submit"]:hover {
+			background-color: #CC0000;
+		}
+
+		.update-form label {
+			display: block;
+		}
+
+		.update-form input[type="text"],
+		.update-form input[type="number"] {
+			display: inline-block;
+			width: 200px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+
+		.update-form input[type="submit"] {
+			background-color: #007FFF;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.update-form input[type="submit"]:hover {
+			background-color: #0066CC;
+		}
+
+		/* Flash message styles */
+		.flashes {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.flash {
+			padding: 10px 20px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			font-weight: bold;
+		}
+
+		.flash-success {
+			background-color: #c3e6cb;
+			border-color: #b1dfbb;
+			color: #155724;
+		}
+
+		.flash-error {
+			background-color: #f8d7da;
+			border-color: #f5c6cb;
+			color: #721c24;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>Dept Input Form</h1>
+	<form action="/dept-submit" method="post">
+		<label for="dept_id">Dept ID:</label>
+		<input type="number" id="dept_id" name="dept_id" required>
+		<label for="dept_name">Dept Name:</label>
+		<input type="text" id="dept_name" name="dept_name" required>
+		<label for="faculty">Faculty:</label>
+		<input type="text" id="faculty" name="faculty" required>
+		<label for="no_of_student">Number of Students:</label>
+		<input type="number" id="no_of_student" name="no_of_student" required>
+		<input type="submit" value="Submit">
+	</form>
+	<form action="/create-table" method="post">
+		<input type="submit" value="Create Table">
+	</form>
+
+	<form class="delete-form" action="/dept-delete" method="post">
+		<div class="form-group">
+			<label for="exampleInputEmail1">Delete Dept by ID:</label>
+			<input type="number" class="form-control" id="delete_dept_id" name="delete_dept_id" required>
+		</div>
+		<button type="submit" class="btn btn-primary" value="Delete">Submit</button>
+		<!-- <label for="delete_dept_id">Delete Dept by ID:</label>
+		<input type="number" id="delete_dept_id" name="delete_dept_id" required>
+		<input type="submit" value="Delete"> -->
+	</form>
+	<form>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Update Dept by ID:</label>
+			<!-- <label for="exampleInputEmail1">Email address</label> -->
+			<input type="number" class="form-control" id="update_dept_id" name="update_dept_id" required>
+			<!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Dept Name:</label>
+			<input type="text" class="form-control" id="update_dept_name" name="update_dept_name" required>
+		</div>
+
+		<div class="form-group">
+			<label for="exampleInputEmail1">Faculty:</label>
+			<input type="text" class="form-control" id="update_faculty" name="update_faculty" required>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Number of Students:</label>
+			<input type="number" class="form-control" id="update_no_of_student" name="update_no_of_student" required>
+		</div>
+		
+		<button type="submit" class="btn btn-primary" value="Update">Submit</button>
+	</form>
+
+<!-- 
+	<form class="update-form" action="/dept-update" method="post">
+		<label for="update_dept_id">Update Dept by ID:</label>
+		<br>
+		<input type="number" id="update_dept_id" name="update_dept_id" required>
+		<br><br>
+		<label for="update_dept_name">Dept Name:</label>
+		<br>
+		<input type="text" id="update_dept_name" name="update_dept_name" required>
+		<br><br>
+		<label for="update_faculty">Faculty:</label>
+		<br>
+		<input type="text" id="update_faculty" name="update_faculty" required>
+		<br><br>
+		<label for="update_no_of_student">Number of Students:</label>
+		<br>
+		<input type="number" id="update_no_of_student" name="update_no_of_student" required>
+		<br><br>
+		<input type="submit" value="Update">
+	</form> -->
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul class="flashes">
+		{% for message in messages %}
+		<div class="alert alert-success" role="alert">
+			{{ message }}
+		</div>
+		<!-- <li class="flash flash-{{ message[1] }}">{{ message }}</li> -->
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+
+
+
+
+
+</body>
+
+</html>
