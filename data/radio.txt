@@ -1,0 +1,2 @@
+Write the SQL code to print the user name||show user;show system;write user;create user||show user
+Write the SQL code to set the line size||show linesize;set linesize;set linesize 45;set linesizes 58||set linesize 45
