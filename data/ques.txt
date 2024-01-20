@@ -1,6 +1,6 @@
 Create a table that has three columns (name (char(1)), roll (integer), and cgpa (fraction)) and set name as the primary key.
-Insert three rows. value of those rows (a, 12, 7.7), (b, 15, 5.7), and (c, 45, 9.7).
-Change the attribute name (name to stu_name).
+Insert one row. value of this row (a, 12, 7.7).
+Rename the attribute name (name to stu_name).
 Change the column definition (char to varchar).
 Add the column "dept_name".
 Remove the column ("dept_name").
