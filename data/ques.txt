@@ -1,6 +1,6 @@
-Create a table that has three columns (name (char(1)), roll (integer), and cgpa (fraction(3,2))).
+Create a table that has three columns (name varchar(20), roll (integer), and cgpa (fraction(3,2))).
 Insert one row. value of this row (a, 12, 7.7).
 Rename the attribute name (name to stu_name).
-Change the column definition (char to varchar).
+Change the column definition (varchar to char).
 Add the column "dept_name".
 Remove the column ("dept_name").
